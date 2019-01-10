@@ -2,6 +2,11 @@
 library(pastecs)
 library(ggplot2)
 
+# Collect stat.desc() results in this data frame
+ results <- data.frame(size=numeric(),set=numeric(),params=numeric(),examp=numeric(),
+                      dist.kurt=numeric(),dist.skew=numeric(),dist.normp=numeric(),
+                      reldist.kurt=numeric(),reldist.skew=numeric(),reldist.normp=numeric(), stringsAsFactors = FALSE)
+
 # Sample sizes
 size <- c(400, 900, 1600, 2500)
 
@@ -18,7 +23,7 @@ parameters <- c("Signbased.vis", "Signbased.log", "Signbased.all", "Superlogical
 for (si in 1:4) 
 {
   # File set loop
-  for (se in 1:2) 
+  for (se in 1:1) 
   {
     # Set i according to number of examples
     for(i in 1:5)
@@ -37,14 +42,14 @@ for (si in 1:4)
         outHist_dist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-dist-Hist.pdf", sep = "")
         outStat_dist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-dist-Stat.txt", sep = "")
         
-        
-        outQQ_comb <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-QQ.pdf", sep = "")
-        
         # Load data
         data <- read.csv(input, header = TRUE, sep = ";", dec = ",")
         
         # Get rid of original alignment results
         randoms <- subset(data, Source=="randomized")
+        
+        # Check if rows fit to sample size
+        stopifnot(nrow(randoms) == size[si])
         
         # Calculate relative distance and number of changes
         randoms$dist.length <- randoms$Distance / randoms$LengthBacktrace
@@ -61,7 +66,7 @@ for (si in 1:4)
         
         # For Distance as well
         hist.dist <- ggplot(randoms, aes(Distance)) + 
-          geom_histogram(aes(y= ..density..), binwidth = 5, color = "black", fill = "white") +
+          geom_histogram(aes(y= ..density..), binwidth = 1, color = "black", fill = "white") +
           stat_function(fun = dnorm, args = list(mean = mean(randoms$Distance), 
                                                  sd = sd(randoms$Distance)), size = 1) + 
           labs(y = "Density", x = "Distance")
@@ -78,21 +83,6 @@ for (si in 1:4)
         p.dist + stat_qq() + stat_qq_line() + theme_bw()
         ggsave(outQQ_dist, width = 15, height = 10, units = "cm")
         
-        
-        # Combined q-q plot for distance and 
-        asFactors <- data.frame(value = c(randoms$Distance, randoms$dist.length), var = c(rep(1,size[si]),rep(2,size[si])))
-        qq <- ggplot(waah, aes(sample = value, colour = factor(var))) + stat_qq() + stat_qq_line()
-        ggsave(outQQ_comb, width = 15, height = 20, units = "cm")
-        
-        # Combined histogram for distance and rel distance?
-        # hist.comb <- ggplot(asFactors, aes(value, colour = factor(var))) + 
-          #geom_density() 
-          # stat_function(fun = dnorm, args = list(mean = mean(randoms$Distance), 
-          #                                       sd = sd(randoms$Distance)), size = 1) + 
-        #  labs(y = "Density", x = "Distance")
-        # hist.comb + theme_bw()
-        # ggsave(outHist_dist, width = 15, height = 10, units = "cm")
-        
         # pastecs::stat.desc() mit norm = TRUE return beneath a lot of other things skewness, 
         # kurtosis and shapiro-wilk test
         stat.reldist <- stat.desc(randoms$dist.length, norm = TRUE)
@@ -101,10 +91,19 @@ for (si in 1:4)
         # Save results to file
         write.table(stat.reldist, outStat_relDist, sep = "\t", row.names = TRUE)
         write.table(stat.dist, outStat_dist, sep = "\t", row.names = TRUE)
+        
+        
+        # Put everything in results
+        results <- rbind(results, list(size=size[si],set=se,params=p,examp=i,
+                   dist.kurt=stat.dist["kurt.2SE"],dist.skew=stat.dist["skew.2SE"],dist.normp=stat.dist["normtest.p"],
+                   reldist.kurt=stat.reldist["kurt.2SE"],reldist.skew=stat.reldist["skew.2SE"],reldist.normp=stat.reldist["normtest.p"]))
+        print(parameter)
       }
     }
   }
 }
 
+factor(results$set, levels = c(1:2), labels = set)
+factor(results$params, levels = c(1:8), labels = parameters)
 
-
+write.csv2(results, "normalityOutput\\results.csv", row.names = FALSE)
