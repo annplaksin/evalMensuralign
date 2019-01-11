@@ -2,11 +2,6 @@
 library(pastecs)
 library(ggplot2)
 
-# Collect stat.desc() results in this data frame
- results <- data.frame(size=numeric(),set=factor(),params=factor(),examp=numeric(),
-                      dist.kurt=numeric(),dist.skew=numeric(),dist.normp=numeric(),
-                      reldist.kurt=numeric(),reldist.skew=numeric(),reldist.normp=numeric(), stringsAsFactors = FALSE)
-
 # Sample sizes
 size <- c(400, 900, 1600, 2500)
 
@@ -18,16 +13,13 @@ parameters <- c("Signbased.vis", "Signbased.log", "Signbased.all", "Superlogical
                 "Signbased.vis.gap", "Signbased.log.gap", "Signbased.all.gap", "Superlogical.gap")
 
 
-factor(results$set, levels = c(1:2), labels = set)
-factor(results$params, levels = c(1:8), labels = parameters)
-
 # Looping various times to process all the data
 
 # Sample size loop
 for (si in 1:4) 
 {
   # File set loop
-  for (se in 1:1) 
+  for (se in 1:2) 
   {
     # Set i according to number of examples
     for(i in 1:5)
@@ -98,9 +90,22 @@ for (si in 1:4)
         
         
         # Put everything in results
-        results <- rbind(results, list(size=size[si],set=se,params=p,examp=i,
-                   dist.kurt=stat.dist["kurt.2SE"],dist.skew=stat.dist["skew.2SE"],dist.normp=stat.dist["normtest.p"],
-                   reldist.kurt=stat.reldist["kurt.2SE"],reldist.skew=stat.reldist["skew.2SE"],reldist.normp=stat.reldist["normtest.p"]))
+        if (exists("res.size") & exists("res.set") & exists("res.params") & exists("res.exam")) {
+          res.size <- c(res.size, size[si]); res.set <- c(res.set, se); res.params <- c(res.params, p); res.exam <- c(res.exam, i)
+          
+          res.reldist.skew <- c(res.reldist.skew , stat.reldist["skew.2SE"])
+          res.reldist.kurt <- c(res.reldist.kurt, stat.reldist["kurt.2SE"])
+          res.reldist.norm <- c(res.reldist.norm, stat.reldist["normtest.p"])
+          
+          res.dist.skew <- c(res.dist.skew, stat.dist["skew.2SE"])
+          res.dist.kurt <- c(res.dist.kurt, stat.dist["kurt.2SE"])
+          res.dist.norm <- c(res.dist.norm, stat.dist["normtest.p"])
+        }
+        else {
+          res.size <- size[si]; res.set <- se; res.params <- p; res.exam <- i
+          res.reldist.kurt <- stat.reldist["kurt.2SE"]; res.reldist.skew <- stat.reldist["skew.2SE"]; res.reldist.norm <- stat.reldist["normtest.p"]
+          res.dist.kurt <- stat.dist["kurt.2SE"]; res.dist.skew <- stat.dist["skew.2SE"]; res.dist.norm <- stat.dist["normtest.p"]
+        }
         
       }
     }
@@ -108,4 +113,13 @@ for (si in 1:4)
 }
 
 
+# Collect stat.desc() results in this data frame
+res.set <- factor(res.set, levels = c(1:2), labels = set)
+res.params <- factor(res.params, levels = c(1:8), labels = parameters)
+
+results <- data.frame(sample.size=res.size,set=res.set,params=res.params,example=res.exam,
+                      reldist.kurt = res.reldist.kurt, reldist.skew = res.reldist.skew, reldist.norm = res.reldist.norm,
+                      dist.kurt = res.dist.kurt, dist.skew = res.dist.skew, dist.norm = res.dist.norm)
+
+# Write results to file
 write.csv2(results, "normalityOutput\\results.csv", row.names = FALSE)
