@@ -3,7 +3,7 @@ library(pastecs)
 library(ggplot2)
 
 # Collect stat.desc() results in this data frame
- results <- data.frame(size=numeric(),set=numeric(),params=numeric(),examp=numeric(),
+ results <- data.frame(size=numeric(),set=factor(),params=factor(),examp=numeric(),
                       dist.kurt=numeric(),dist.skew=numeric(),dist.normp=numeric(),
                       reldist.kurt=numeric(),reldist.skew=numeric(),reldist.normp=numeric(), stringsAsFactors = FALSE)
 
@@ -16,6 +16,10 @@ set <- c("clean", "withoutSB")
 # Parameter sets
 parameters <- c("Signbased.vis", "Signbased.log", "Signbased.all", "Superlogical", 
                 "Signbased.vis.gap", "Signbased.log.gap", "Signbased.all.gap", "Superlogical.gap")
+
+
+factor(results$set, levels = c(1:2), labels = set)
+factor(results$params, levels = c(1:8), labels = parameters)
 
 # Looping various times to process all the data
 
@@ -97,13 +101,11 @@ for (si in 1:4)
         results <- rbind(results, list(size=size[si],set=se,params=p,examp=i,
                    dist.kurt=stat.dist["kurt.2SE"],dist.skew=stat.dist["skew.2SE"],dist.normp=stat.dist["normtest.p"],
                    reldist.kurt=stat.reldist["kurt.2SE"],reldist.skew=stat.reldist["skew.2SE"],reldist.normp=stat.reldist["normtest.p"]))
-        print(parameter)
+        
       }
     }
   }
 }
 
-factor(results$set, levels = c(1:2), labels = set)
-factor(results$params, levels = c(1:8), labels = parameters)
 
 write.csv2(results, "normalityOutput\\results.csv", row.names = FALSE)
