@@ -30,13 +30,13 @@ for (si in 1:4)
         # Set filenames
         input <- paste("normalityInput\\", size[si], "\\", set[se], "\\", i, "_", parameters[p], ".csv", sep = "")
         
-        outQQ_relDist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-relDist-QQ.pdf", sep = "")
-        outHist_relDist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-relDist-Hist.pdf", sep = "")
-        outStat_relDist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-relDist-Stat.txt", sep = "")
+        outQQ_relDist <- paste("normalityOutput\\reldist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-QQ.pdf", sep = "")
+        outHist_relDist <- paste("normalityOutput\\reldist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-Hist.pdf", sep = "")
+        outStat_relDist <- paste("normalityOutput\\reldist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-Stat.txt", sep = "")
         
-        outQQ_dist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-dist-QQ.pdf", sep = "")
-        outHist_dist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-dist-Hist.pdf", sep = "")
-        outStat_dist <- paste("normalityOutput\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-dist-Stat.txt", sep = "")
+        outQQ_dist <- paste("normalityOutput\\dist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-QQ.pdf", sep = "")
+        outHist_dist <- paste("normalityOutput\\dist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-Hist.pdf", sep = "")
+        outStat_dist <- paste("normalityOutput\\dist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-Stat.txt", sep = "")
         
         # Load data
         data <- read.csv(input, header = TRUE, sep = ";", dec = ",")
@@ -93,17 +93,29 @@ for (si in 1:4)
         if (exists("res.size") & exists("res.set") & exists("res.params") & exists("res.exam")) {
           res.size <- c(res.size, size[si]); res.set <- c(res.set, se); res.params <- c(res.params, p); res.exam <- c(res.exam, i)
           
+          res.reldist.mean <- c(res.reldist.mean, stat.reldist["mean"])
+          res.reldist.median <- c(res.reldist.median, stat.reldist["median"])
+          res.reldist.var <- c(res.reldist.var, stat.reldist["var"])
+          res.reldist.std <- c(res.reldist.std, stat.reldist["std.dev"])
           res.reldist.skew <- c(res.reldist.skew , stat.reldist["skew.2SE"])
           res.reldist.kurt <- c(res.reldist.kurt, stat.reldist["kurt.2SE"])
           res.reldist.norm <- c(res.reldist.norm, stat.reldist["normtest.p"])
           
+          res.dist.mean <- c(res.dist.mean, stat.dist["mean"])
+          res.dist.median <- c(res.dist.median, stat.dist["median"])
+          res.dist.var <- c(res.dist.var, stat.dist["var"])
+          res.dist.std <- c(res.dist.std, stat.dist["std.dev"])
           res.dist.skew <- c(res.dist.skew, stat.dist["skew.2SE"])
           res.dist.kurt <- c(res.dist.kurt, stat.dist["kurt.2SE"])
           res.dist.norm <- c(res.dist.norm, stat.dist["normtest.p"])
         }
         else {
           res.size <- size[si]; res.set <- se; res.params <- p; res.exam <- i
+          res.reldist.mean <- stat.reldist["mean"]; res.reldist.median <- stat.reldist["median"]
+          res.reldist.var <- stat.reldist["var"]; res.reldist.std <- stat.reldist["std.dev"]
           res.reldist.kurt <- stat.reldist["kurt.2SE"]; res.reldist.skew <- stat.reldist["skew.2SE"]; res.reldist.norm <- stat.reldist["normtest.p"]
+          res.dist.mean <- stat.dist["mean"]; res.dist.median <- stat.dist["median"]
+          res.dist.var <- stat.dist["var"]; res.dist.std <- stat.dist["std.dev"]
           res.dist.kurt <- stat.dist["kurt.2SE"]; res.dist.skew <- stat.dist["skew.2SE"]; res.dist.norm <- stat.dist["normtest.p"]
         }
         
@@ -118,7 +130,11 @@ res.set <- factor(res.set, levels = c(1:2), labels = set)
 res.params <- factor(res.params, levels = c(1:8), labels = parameters)
 
 results <- data.frame(sample.size=res.size,set=res.set,params=res.params,example=res.exam,
+                      reldist.mean=res.reldist.mean, reldist.median=res.reldist.median,
+                      reldist.var=res.reldist.var, reldist.std=res.reldist.std,
                       reldist.kurt = res.reldist.kurt, reldist.skew = res.reldist.skew, reldist.norm = res.reldist.norm,
+                      dist.mean=res.dist.mean, dist.median=res.dist.median,
+                      dist.var=res.dist.var, dist.std=res.dist.std,
                       dist.kurt = res.dist.kurt, dist.skew = res.dist.skew, dist.norm = res.dist.norm)
 
 # Write results to file
