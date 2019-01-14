@@ -7,23 +7,8 @@ library(rcompanion)
 
 results <- read.csv2("C:/Users/Rumpel/Source/Repos/R/evalMensuralign/normalityOutput/results.csv")
 
-# Subset of reldist.norm < 0.05
-allNotNormal <- subset(results, reldist.norm < 0.05)
-
-# Easy contingency tables
-bla <- table(allNotNormal$set)
-blubb <- table(allNotNormal$params, allNotNormal$set)
-bloo <- table(allNotNormal$params,allNotNormal$example)
-
-# Some plots on factors
-plot <- ggplot(allNotNormal, aes(factor(params), fill = factor(example))) + geom_bar()
-plot + scale_color_grey() + theme_bw()
-
-plot2 <- ggplot(allNotNormal, aes(factor(sample.size), fill = factor(params))) + geom_bar()
-plot2 + scale_fill_hue(l=40, c=35)
-
-plot3 <- ggplot(allNotNormal, aes(factor(params), fill = factor(set))) + geom_bar()
-plot3 + scale_color_grey(start=0.8, end=0.2) + theme_classic()
+# Throw out superlogical sets of withoutSB, because they're not a used parameter set
+results <- results[!(results$set == "withoutSB" & (results$params == "Superlogical" | results$params == "Superlogical.gap")), ]
 
 
 # Contigency table on reldist.norm < 0.05 and params
