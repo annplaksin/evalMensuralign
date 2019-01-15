@@ -41,7 +41,7 @@ params2highlyNonNormal <- table(results$params, results$highlyNonNormal)
 
 CrossTable(params2nonNormal, chisq = TRUE, expected = TRUE, prop.t = FALSE, prop.r = FALSE, prop.c = FALSE, sresid = TRUE, format = "SPSS")
 # ... with greater workspace
-fisher.test(params2nonNormal, workspace = 2e+07)
+fisher.test(params2nonNormal, workspace = 2e+08)
 cramerV(params2nonNormal)
 
 CrossTable(params2highlyNonNormal, chisq = TRUE, expected = TRUE, prop.t = FALSE, prop.r = FALSE, prop.c = FALSE, sresid = TRUE, format = "SPSS")
