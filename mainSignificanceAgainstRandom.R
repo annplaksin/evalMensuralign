@@ -61,10 +61,33 @@ for (gr in 1:7) {
     mdnOrig <- median(testdata[testdata$source == 1, ]$reldist)
     mdnRand <- median(testdata[testdata$source == 2, ]$reldist)
     
-    resultPerGroup <- cbind(p,w,r,mdnOrig,mdnRand)
-    print(resultPerGroup)
+    if(exists("res.p") & exists("res.w")) {
+      res.bla_group <- c(res.bla_group, groups[gr])
+      res.bla_set <- c(res.bla_set, sets[s])
+      res.p <- c(res.p, p)
+      res.w <- c(res.w, w)
+      res.r <-c(res.r, r)
+      res.mdOrig <- c(res.mdOrig, mdnOrig)
+      res.mdRand <- c(res.mdRand, mdnRand)
+    }
+    else {
+      res.bla_group <- groups[gr]
+      res.bla_set <- sets[s]
+      res.p <- p
+      res.w <- w
+      res.r <- r
+      res.mdOrig <- mdnOrig
+      res.mdRand <- mdnRand
+    }
   }
 }
+
+res.group <- factor(res.group, groups)
+res.set <- factor(res.set, sets)
+
+wilcoxRes <- data.frame(Group = res.bla_group, Set = res.bla_set, P = res.p, W = res.w, R = res.r, mdOrig = res.mdOrig, mdRand = res.mdRand)
+
+write.csv2(wilcoxRes, "mainOutput\\wilcoxResults.csv", row.names = FALSE)
 
 
 
