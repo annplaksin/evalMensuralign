@@ -59,6 +59,8 @@ res.Case <- factor(res.Case, levels = 1:70)
 res.Set <-factor(res.Set, levels = c(1:14), labels = sets)
 groups <- factor(groups, levels = c(1:7))
 
+dataCases <- data.frame(Group=groups,Case=res.Case,Set=res.Set)
+
 zResults <- data.frame(Group=groups,Case=res.Case,Set=res.Set,Z=res.Z)
 
 normResults <- data.frame(Group=groups,Case=res.Case,Set=res.Set,Norm.p=res.Norm)
@@ -71,3 +73,5 @@ normResults_wide <- cast(normResults, Group + Case ~ Set, value="Norm.p")
 # Write results to file
 write.csv2(zResults_wide, "mainOutput\\resultZscores.csv", row.names = FALSE)
 write.csv2(normResults_wide, "mainOutput\\resultNormScores.csv", row.names = FALSE)
+
+write.csv2(dataCases, "mainOutput\\cases.csv", row.names = FALSE)
