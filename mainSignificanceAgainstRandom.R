@@ -1,3 +1,6 @@
+#Includes
+library(ggplot2)
+
 # Self made function to calculate effect size
 # Returns r
 rFromWilcox <- function(wilcoxModel, N){
@@ -44,11 +47,24 @@ for (i in 1:980) {
 
 # Get every relative distance with case, group, set & source into one dataframe
 everything <- data.frame(case = res.case, group = res.group, set = res.set, source = res.source, reldist = res.reldist)
+write.csv2(everything, "mainOutput\\everything.csv", row.names = FALSE)
 
 # DO THE THING!
 # Loop through groups and sets, perform a wilcox test for every case
-for (gr in 1:7) {
-  for (s in 1:14) {
+for (s in 1:14) {
+  
+  # Before testing the data, produce some nice fancy boxplots
+  setdata <- everything[everything$set == s, ]
+  setdata$group <- factor(setdata$group, groups)
+  setboxplot <- ggplot(setdata[setdata$source == 2, ], aes(x = group, y = reldist)) + geom_boxplot(outlier.shape = 1) +
+    stat_summary(data = setdata[setdata$source == 1, ], shape=18, size=0.8, na.rm = TRUE) +
+    labs(x = "Groups", y = "Relative Distance", title = paste("Original alignment vs. surrogate data —", sets[s], sep = " "))
+  setboxplot + scale_fill_grey() + theme_bw()
+  
+  # Save plot
+  ggsave(paste("mainOutput\\boxplot_",sets[s],".pdf",sep=""), width = 15, height = 10, units = "cm")
+  
+  for (gr in 1:7) {
     # Select subset by group & set
     testdata <- everything[everything$group == gr & everything$set == s, ]
     # Perform Wilcox test
@@ -82,8 +98,8 @@ for (gr in 1:7) {
   }
 }
 
-res.group <- factor(res.group, groups)
-res.set <- factor(res.set, sets)
+res.bla_group <- factor(res.bla_group, groups)
+res.bla_set <- factor(res.bla_set, sets)
 
 wilcoxRes <- data.frame(Group = res.bla_group, Set = res.bla_set, P = res.p, W = res.w, R = res.r, mdOrig = res.mdOrig, mdRand = res.mdRand)
 
