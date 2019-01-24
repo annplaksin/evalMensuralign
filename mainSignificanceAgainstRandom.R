@@ -1,5 +1,6 @@
 #Includes
 library(ggplot2)
+library(reshape)
 
 # Self made function to calculate effect size
 # Returns r
@@ -47,7 +48,6 @@ for (i in 1:980) {
 
 # Get every relative distance with case, group, set & source into one dataframe
 everything <- data.frame(case = res.case, group = res.group, set = res.set, source = res.source, reldist = res.reldist)
-write.csv2(everything, "mainOutput\\everything.csv", row.names = FALSE)
 
 # DO THE THING!
 # Loop through groups and sets, perform a wilcox test for every case
@@ -105,5 +105,13 @@ wilcoxRes <- data.frame(Group = res.bla_group, Set = res.bla_set, P = res.p, W =
 
 write.csv2(wilcoxRes, "mainOutput\\wilcoxResults.csv", row.names = FALSE)
 
+wilcoxPs <- wilcoxRes[, c("Group","Set","P")]
+wilcoxPs_wide <- cast(wilcoxPs, Group ~ Set, value="P")
+write.csv2(wilcoxPs_wide, "mainOutput\\wilcoxPs.csv", row.names = FALSE)
 
-
+# At last, write everything beautifully in a file
+everything$set <- factor(everything$set, levels = c(1:14), labels=sets)
+everything$group <- factor(everything$group, groups)
+everything$source <- factor(everything$source, levels=c(1,2), labels = c("original","randomized"))
+everything$case <- factor(everything$case, levels = c(1:70), labels = c(1:70))
+write.csv2(everything, "mainOutput\\everything.csv", row.names = FALSE)
