@@ -5,7 +5,7 @@ library(reshape)
 cases <- c(1:70)
 
 # Groups
-groups <- c(rep(1,140),rep(2,140),rep(3,140),rep(4,140),rep(5,140),rep(6,140),rep(7,140))
+groups <- c(rep(7,140),rep(6,140),rep(5,140),rep(4,140),rep(3,140),rep(2,140),rep(1,140))
 
 # Sets
 sets <- c("Signbased.all", "Signbased.all.gap", "Signbased.log", "Signbased.log.gap", "Signbased.vis", "Signbased.vis.gap", 

@@ -3,3 +3,7 @@
 .RData
 .Ruserdata
 mainOutput/everything.csv
+mainOutput/chaosB.csv
+mainOutput/chaosA.csv
+mainOutput/case2setRand.txt
+mainOutput/case2setOrig.txt

@@ -30,12 +30,19 @@ for (i in 1:980) {
   case <- c(rep(data[i,2],2501))
   set <- c(rep(data[i,3],2501))
   
+  lengthA <- results$LengthSequenceA
+  lengthB <- results$LengthSequenceB
+  lengthTrace <- results$LengthBacktrace
+  
   if(exists("res.source") & exists("res.reldist") & exists("res.group") & exists("res.case") & exists("res.set")) {
     res.source <- c(res.source, source)
     res.reldist <- c(res.reldist, reldist)
     res.group <- c(res.group, group)
     res.case <- c(res.case, case)
     res.set <- c(res.set, set)
+    res.lengthA <- c(res.lengthA, lengthA)
+    res.lengthB <- c(res.lengthB, lengthB)
+    res.lengthTrace <- c(res.lengthTrace, lengthTrace)
   }
   else {
     res.source <- source
@@ -43,11 +50,15 @@ for (i in 1:980) {
     res.group <- group
     res.case <- case
     res.set <- set
+    res.lengthA <- lengthA
+    res.lengthB <- lengthB
+    res.lengthTrace <- lengthTrace
   }
 }
 
 # Get every relative distance with case, group, set & source into one dataframe
-everything <- data.frame(case = res.case, group = res.group, set = res.set, source = res.source, reldist = res.reldist)
+everything <- data.frame(case = res.case, group = res.group, set = res.set, source = res.source, reldist = res.reldist, lengthA = 
+                           res.lengthA, lengthB = res.lengthB, lengthTrace = res.lengthTrace)
 
 # DO THE THING!
 # Loop through groups and sets, perform a wilcox test for every case
