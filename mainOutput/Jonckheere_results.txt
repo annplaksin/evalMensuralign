@@ -1,0 +1,81 @@
+> # Then we want to find the set with the most significant trend. The Z-Scores should increase with the expected similarity
+> # A Jonckheere-Terpstra test will help us#
+> jonckheere.test(signAll$Z, as.numeric(signAll$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 350, p-value = 7.318e-15
+alternative hypothesis: two.sided
+
+> jonckheere.test(signLog$Z, as.numeric(signLog$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 297, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(signLogGap$Z, as.numeric(signLogGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 240, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(signVisGap$Z, as.numeric(signVisGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 310, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(super$Z, as.numeric(super$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 326, p-value = 5.172e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(superGap$Z, as.numeric(superGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 288, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutAll$Z, as.numeric(withoutAll$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 316, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutLog$Z, as.numeric(withoutLog$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 302, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutLogGap$Z, as.numeric(withoutLogGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 243, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutVisGap$Z, as.numeric(withoutVisGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 319, p-value = 2.306e-16
+alternative hypothesis: two.sided

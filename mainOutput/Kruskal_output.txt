@@ -1,0 +1,58 @@
+	Kruskal-Wallis rank sum test
+
+data:  Signbased.all by Group
+Kruskal-Wallis chi-squared = 48.793, df = 6, p-value = 8.201e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  Signbased.log by Group
+Kruskal-Wallis chi-squared = 51.274, df = 6, p-value = 2.609e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  Signbased.log.gap by Group
+Kruskal-Wallis chi-squared = 57.111, df = 6, p-value = 1.735e-10
+
+
+	Kruskal-Wallis rank sum test
+
+data:  Signbased.vis.gap by Group
+Kruskal-Wallis chi-squared = 47.327, df = 6, p-value = 1.61e-08
+
+
+	Kruskal-Wallis rank sum test
+
+data:  Superlogical by Group
+Kruskal-Wallis chi-squared = 50.267, df = 6, p-value = 4.156e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  Superlogical.gap by Group
+Kruskal-Wallis chi-squared = 53.12, df = 6, p-value = 1.11e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  withoutSB.all by Group
+Kruskal-Wallis chi-squared = 50.288, df = 6, p-value = 4.116e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  withoutSB.log by Group
+Kruskal-Wallis chi-squared = 52.286, df = 6, p-value = 1.633e-09
+
+
+	Kruskal-Wallis rank sum test
+
+data:  withoutSB.log.gap by Group
+Kruskal-Wallis chi-squared = 56.06, df = 6, p-value = 2.831e-10
+
+
+	Kruskal-Wallis rank sum test
+
+data:  withoutSB.vis.gap by Group
+Kruskal-Wallis chi-squared = 46.937, df = 6, p-value = 1.926e-08

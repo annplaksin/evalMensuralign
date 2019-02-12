@@ -25,9 +25,11 @@ vis <- everything[everything$set == "Signbased.vis"|everything$set == "Signbased
                     everything$set == "withoutSB.vis"|everything$set == "withoutSB.vis.gap", ]
 vis.plot <- ggplot(vis[vis$source == "randomized", ], aes(x = group, y = reldist, color=factor(set))) + 
   geom_boxplot(outlier.shape = 1) +
-  stat_summary(data = vis[vis$source == "original", ], shape=18, size=1, na.rm = TRUE)
+  stat_summary(data = vis[vis$source == "original", ], shape=18, size=1, na.rm = TRUE) + 
+  labs(x = "Group",y = "Relative Distance", color = "Scenario")
 vis.plot + scale_color_grey() + theme_bw()
-
+ggsave("mainOutput\\visPlots.eps", width = 20, height = 15, units = "cm")
+ggsave("mainOutput\\visPlots.pdf", width = 20, height = 15, units = "cm")
 
 #log
 log <- everything[everything$set == "Signbased.log"|everything$set == "Signbased.log.gap"|
@@ -35,24 +37,32 @@ log <- everything[everything$set == "Signbased.log"|everything$set == "Signbased
 
 log.plot <- ggplot(log[log$source == "randomized", ], aes(x = group, y = reldist, color=factor(set))) + 
   geom_boxplot(outlier.shape = 1) +
-  stat_summary(data = log[log$source == "original", ], shape=18, size=1, na.rm = TRUE)
+  stat_summary(data = log[log$source == "original", ], shape=18, size=1, na.rm = TRUE) + 
+  labs(x = "Group",y = "Relative Distance", color = "Scenario")
 log.plot + scale_color_grey() + theme_bw()
+ggsave("mainOutput\\logPlots.eps", width = 20, height = 15, units = "cm")
+ggsave("mainOutput\\vlogPlots.pdf", width = 20, height = 15, units = "cm")
 
 #superlogical
 super <- everything[everything$set == "Superlogical"|everything$set == "Superlogical.gap", ]
 
 super.plot <- ggplot(super[super$source == "randomized", ], aes(x = group, y = reldist, color=factor(set))) + 
   geom_boxplot(outlier.shape = 1) +
-  stat_summary(data = super[super$source == "original", ], shape=18, size=1, na.rm = TRUE)
+  stat_summary(data = super[super$source == "original", ], shape=18, size=1, na.rm = TRUE) + 
+  labs(x = "Group",y = "Relative Distance", color = "Scenario")
 super.plot + scale_color_grey() + theme_bw()
-
+ggsave("mainOutput\\superPlots.eps", width = 20, height = 15, units = "cm")
+ggsave("mainOutput\\superPlots.pdf", width = 20, height = 15, units = "cm")
 
 # Highlights
 highlights <- everything[everything$set == "Signbased.log.gap" | everything$set == "Signbased.vis.gap" | everything$set == "Superlogical.gap", ]
 highlight.plot <- ggplot(highlights[highlights$source == "randomized", ], aes(x = group, y = reldist, color=factor(set))) + 
   geom_boxplot(outlier.shape = 1) +
-  stat_summary(data = highlights[highlights$source == "original", ], shape=18, size=1, na.rm = TRUE)
+  stat_summary(data = highlights[highlights$source == "original", ], shape=18, size=1, na.rm = TRUE) + 
+  labs(x = "Group",y = "Relative Distance", color = "Scenario")
 highlight.plot + scale_color_grey() + theme_bw()
+ggsave("mainOutput\\highlightPlots.eps", width = 20, height = 15, units = "cm")
+ggsave("mainOutput\\highlightPlots.pdf", width = 20, height = 15, units = "cm")
 
 # Compare all original alignments --- naaaaaasty!
 origs <- everything[everything$source == "original", ]
