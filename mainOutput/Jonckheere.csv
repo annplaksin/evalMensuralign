@@ -1,0 +1,11 @@
+Szenario;J;p
+Signbased.all;350;7,318e-15
+Signbased.log;297;>2.2e-16
+Signbased.log.gap;240;>2.2e-16
+Signbased.vis.gap;310;>2.2e-16
+Superlogical;326;5.172e-16
+Superlogical.gap;288;>2.2e-16
+withoutSB.all;316;>2.2e-16
+withoutSB.log;302;>2.2e-16
+withoutSB.log.gap;243;>2.2e-16
+withoutSB.vis.gap;319;2.306e-16

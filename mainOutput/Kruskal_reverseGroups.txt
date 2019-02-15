@@ -1,0 +1,226 @@
+# Kruskal with reversed Groups... 1 = State comparison / 7 = Quis dabit capiti
+
+> kruskalmc(Z ~ Group, data = signAll, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.8     34.26472      FALSE
+1-3    21.2     34.26472      FALSE
+1-4    25.7     34.26472      FALSE
+1-5    43.3     34.26472       TRUE
+1-6    35.2     34.26472       TRUE
+1-7    47.2     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = signLog, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.1     34.26472      FALSE
+1-3    17.2     34.26472      FALSE
+1-4    27.5     34.26472      FALSE
+1-5    41.9     34.26472       TRUE
+1-6    38.0     34.26472       TRUE
+1-7    47.3     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = signLogGap, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.8     34.26472      FALSE
+1-3    12.8     34.26472      FALSE
+1-4    24.9     34.26472      FALSE
+1-5    32.5     34.26472      FALSE
+1-6    49.8     34.26472       TRUE
+1-7    44.8     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = signVisGap, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     4.0     34.26472      FALSE
+1-3    20.3     34.26472      FALSE
+1-4    31.2     34.26472      FALSE
+1-5    34.8     34.26472       TRUE
+1-6    41.9     34.26472       TRUE
+1-7    46.3     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = super, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.9     34.26472      FALSE
+1-3     7.0     34.26472      FALSE
+1-4    26.7     34.26472      FALSE
+1-5    34.9     34.26472       TRUE
+1-6    41.4     34.26472       TRUE
+1-7    42.1     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = superGap, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.4     34.26472      FALSE
+1-3     9.5     34.26472      FALSE
+1-4    24.9     34.26472      FALSE
+1-5    31.8     34.26472      FALSE
+1-6    46.9     34.26472       TRUE
+1-7    42.3     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = withoutAll, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.1     34.26472      FALSE
+1-3    11.9     34.26472      FALSE
+1-4    29.4     34.26472      FALSE
+1-5    40.2     34.26472       TRUE
+1-6    34.4     34.26472       TRUE
+1-7    46.9     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = withoutLog, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.5     34.26472      FALSE
+1-3     9.7     34.26472      FALSE
+1-4    27.1     34.26472      FALSE
+1-5    40.2     34.26472       TRUE
+1-6    38.2     34.26472       TRUE
+1-7    44.3     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = withoutLogGap, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     2.2     34.26472      FALSE
+1-3    11.2     34.26472      FALSE
+1-4    24.3     34.26472      FALSE
+1-5    32.7     34.26472      FALSE
+1-6    47.9     34.26472       TRUE
+1-7    45.5     34.26472       TRUE
+> kruskalmc(Z ~ Group, data = withoutVisGap, probs = 0.001, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.001 
+Comparisons
+    obs.dif critical.dif difference
+1-2     2.9     34.26472      FALSE
+1-3    15.6     34.26472      FALSE
+1-4    30.0     34.26472      FALSE
+1-5    34.4     34.26472       TRUE
+1-6    39.4     34.26472       TRUE
+1-7    45.7     34.26472       TRUE
+
+
+
+> # Again with lower prob level
+> kruskalmc(Z ~ Group, data = signAll, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.8     28.61425      FALSE
+1-3    21.2     28.61425      FALSE
+1-4    25.7     28.61425      FALSE
+1-5    43.3     28.61425       TRUE
+1-6    35.2     28.61425       TRUE
+1-7    47.2     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = signLog, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.1     28.61425      FALSE
+1-3    17.2     28.61425      FALSE
+1-4    27.5     28.61425      FALSE
+1-5    41.9     28.61425       TRUE
+1-6    38.0     28.61425       TRUE
+1-7    47.3     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = signLogGap, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.8     28.61425      FALSE
+1-3    12.8     28.61425      FALSE
+1-4    24.9     28.61425      FALSE
+1-5    32.5     28.61425       TRUE
+1-6    49.8     28.61425       TRUE
+1-7    44.8     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = signVisGap, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     4.0     28.61425      FALSE
+1-3    20.3     28.61425      FALSE
+1-4    31.2     28.61425       TRUE
+1-5    34.8     28.61425       TRUE
+1-6    41.9     28.61425       TRUE
+1-7    46.3     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = super, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.9     28.61425      FALSE
+1-3     7.0     28.61425      FALSE
+1-4    26.7     28.61425      FALSE
+1-5    34.9     28.61425       TRUE
+1-6    41.4     28.61425       TRUE
+1-7    42.1     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = superGap, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.4     28.61425      FALSE
+1-3     9.5     28.61425      FALSE
+1-4    24.9     28.61425      FALSE
+1-5    31.8     28.61425       TRUE
+1-6    46.9     28.61425       TRUE
+1-7    42.3     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = withoutAll, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     3.1     28.61425      FALSE
+1-3    11.9     28.61425      FALSE
+1-4    29.4     28.61425       TRUE
+1-5    40.2     28.61425       TRUE
+1-6    34.4     28.61425       TRUE
+1-7    46.9     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = withoutLog, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     1.5     28.61425      FALSE
+1-3     9.7     28.61425      FALSE
+1-4    27.1     28.61425      FALSE
+1-5    40.2     28.61425       TRUE
+1-6    38.2     28.61425       TRUE
+1-7    44.3     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = withoutLogGap, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     2.2     28.61425      FALSE
+1-3    11.2     28.61425      FALSE
+1-4    24.3     28.61425      FALSE
+1-5    32.7     28.61425       TRUE
+1-6    47.9     28.61425       TRUE
+1-7    45.5     28.61425       TRUE
+> kruskalmc(Z ~ Group, data = withoutVisGap, probs = 0.01, cont = 'two-tailed')
+Multiple comparison test after Kruskal-Wallis, treatments vs control (two-tailed) 
+p.value: 0.01 
+Comparisons
+    obs.dif critical.dif difference
+1-2     2.9     28.61425      FALSE
+1-3    15.6     28.61425      FALSE
+1-4    30.0     28.61425       TRUE
+1-5    34.4     28.61425       TRUE
+1-6    39.4     28.61425       TRUE
+1-7    45.7     28.61425       TRUE
