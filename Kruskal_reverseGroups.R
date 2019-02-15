@@ -159,16 +159,17 @@ interestingZs <- meltedZ[meltedZ$Set == "Signbased.vis.gap"|meltedZ$Set == "Sign
                            meltedZ$Set == "Signbased.all"| meltedZ$Set == "withoutSB.all"|
                            meltedZ$Set == "withoutSB.log"|meltedZ$Set == "withoutSB.log.gap"|
                            meltedZ$Set == "withoutSB.vis.gap", ]
-interestingPlot <- ggplot(interestingZs, aes(Group, Z, color = factor(Set))) + geom_boxplot()
-interestingPlot + scale_color_grey() + theme_bw()
-ggsave("mainOutput\\highlightZplots.eps", width = 20, height = 15, units = "cm")
-ggsave("mainOutput\\highlightZplots.pdf", width = 20, height = 15, units = "cm")
+interestingPlot <- ggplot(interestingZs, aes(Group, Z, color = factor(Set))) + geom_boxplot() +
+  labs(x = "Groups", y = "Z-Value", title = "Z-Values per Group", color = "Parameter sets")
+interestingPlot + scale_color_brewer(palette = "RdGy") + theme_bw()
+ggsave("mainOutput\\highlightZplots_rev.eps", width = 20, height = 15, units = "cm")
+ggsave("mainOutput\\highlightZplots_rev.pdf", width = 20, height = 15, units = "cm")
 
 interestingZs$numGroup <- as.numeric(interestingZs$Group)
 
 mdnLinePlot <- ggplot(interestingZs, aes(numGroup, Z, color = factor(Set))) + geom_point(size=2) +
   stat_summary(aes(y = Z), fun.y=median, geom="smooth", size = 1) +
   labs(x = "Groups (numeric)", y = "Z-Value", title = "Z-Values per Group", subtitle = "With Median lines", color = "Parameter sets")
-mdnLinePlot + theme_bw() + scale_color_brewer(palette = "RdBu")
+mdnLinePlot + theme_bw() + scale_color_brewer(palette = "RdGy")
 ggsave("mainOutput\\trendlinePlot_rev.eps", width = 20, height = 15, units = "cm")
 ggsave("mainOutput\\trendlinePlot_rev.pdf", width = 20, height = 15, units = "cm")
