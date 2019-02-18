@@ -1,0 +1,26 @@
+Giunta
+ModD4
+Pet-1505
+Pet-1515
+Pet-1519
+VatS41
+
+Matrix------
+0	76	6	8	11	63	
+76	0	76	78	81	106	
+6	76	0	2	5	57	
+8	78	2	0	7	59	
+11	81	5	7	0	62	
+63	106	57	59	62	0	
+
+Between		And		Length
+-------		---		------
+ModD4		ModD4VatS41		61.75
+VatS41		ModD4VatS41		44.25
+Giunta		GiuntaModD4VatS41		4.5
+ModD4VatS41		GiuntaModD4VatS41		12
+Pet-1505		Pet-1505Pet-1515		0
+Pet-1515		Pet-1505Pet-1515		2
+GiuntaModD4VatS41		GiuntaModD4VatS41Pet-1519		1.5
+Pet-1519		GiuntaModD4VatS41Pet-1519		5
+GiuntaModD4VatS41Pet-1519		Pet-1505Pet-1515		0

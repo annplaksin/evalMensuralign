@@ -1,0 +1,18 @@
+Giunta
+ModD4
+Pet-1505
+VatS41
+
+Matrix------
+0	69	40	62	
+69	0	45	68	
+40	45	0	34	
+62	68	34	0	
+
+Between		And		Length
+-------		---		------
+Giunta		GiuntaModD4		31.75
+ModD4		GiuntaModD4		37.25
+Pet-1505		Pet-1505VatS41		5.75
+VatS41		Pet-1505VatS41		28.25
+GiuntaModD4		Pet-1505VatS41		2.25

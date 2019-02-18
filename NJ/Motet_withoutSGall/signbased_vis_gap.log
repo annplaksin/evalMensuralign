@@ -1,0 +1,22 @@
+1503-1
+1508-3
+Panc27_bef
+Panc27_aft
+VatS41_TuSolus
+
+Matrix------
+0	888	466	465	484	
+888	0	710	711	726	
+466	710	0	1	103	
+465	711	1	0	102	
+484	726	103	102	0	
+
+Between		And		Length
+-------		---		------
+1503-1		1503-11508-3		322
+1508-3		1503-11508-3		566
+Panc27_bef		Panc27_befPanc27_aft		0.75
+Panc27_aft		Panc27_befPanc27_aft		0.25
+1503-11508-3		1503-11508-3VatS41_TuSolus		101.25
+VatS41_TuSolus		1503-11508-3VatS41_TuSolus		59.75
+1503-11508-3VatS41_TuSolus		Panc27_befPanc27_aft		42.25

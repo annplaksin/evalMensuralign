@@ -1,0 +1,22 @@
+Giu
+Mod
+P05
+P15
+P19
+
+Matrix------
+0	41	4	5	9	
+41	0	37	38	42	
+4	37	0	1	5	
+5	38	1	0	6	
+9	42	5	6	0	
+
+Between		And		Length
+-------		---		------
+Giu		GiuMod		4
+Mod		GiuMod		37
+P05		P05P15		0
+P15		P05P15		1
+GiuMod		GiuModP19		0
+P19		GiuModP19		5
+GiuModP19		P05P15		0

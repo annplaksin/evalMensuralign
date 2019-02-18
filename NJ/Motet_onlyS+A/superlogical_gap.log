@@ -1,0 +1,22 @@
+1503-1(DA)
+1508-3(DA)
+Panc27(DA)
+VatS_TuSolus(DA)
+SGall-463
+
+Matrix------
+0	410	153	153	8	
+410	0	307	309	412	
+153	307	0	14	153	
+153	309	14	0	156	
+8	412	153	156	0	
+
+Between		And		Length
+-------		---		------
+1503-1(DA)		1503-1(DA)SGall-463		3.16667
+SGall-463		1503-1(DA)SGall-463		4.83333
+Panc27(DA)		Panc27(DA)VatS_TuSolus(DA)		6.125
+VatS_TuSolus(DA)		Panc27(DA)VatS_TuSolus(DA)		7.875
+1503-1(DA)SGall-463		1503-1(DA)SGall-4631508-3(DA)		124.375
+1508-3(DA)		1503-1(DA)SGall-4631508-3(DA)		282.625
+1503-1(DA)SGall-4631508-3(DA)		Panc27(DA)VatS_TuSolus(DA)		18.375
