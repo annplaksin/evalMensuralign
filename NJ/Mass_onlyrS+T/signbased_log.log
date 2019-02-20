@@ -1,11 +1,12 @@
 Giunta
 ModD4
-Pet-1505
-Pet-1515
-Pet-1519
+Pet1505
+Pet1515
+Pet1519
 VatS41
 
-Matrix------
+Start Matrix
+------
 0	76	6	8	11	63	
 76	0	76	78	81	106	
 6	76	0	2	5	57	
@@ -13,14 +14,37 @@ Matrix------
 11	81	5	7	0	62	
 63	106	57	59	62	0	
 
+Tree Matrix
+------
+0	78.25	6	8	11	60.75	
+78.25	0	75.25	77.25	80.25	106	
+6	75.25	0	2	5	57.75	
+8	77.25	2	0	7	59.75	
+11	80.25	5	7	0	62.75	
+60.75	106	57.75	59.75	62.75	0
+
+Deviation
+---------
+0	-2,25	0	0	0	2,25
+-2,25	0	0,75	0,75	0,75	0
+0	0,75	0	0	0	-0,75
+0	0,75	0	0	0	-0,75
+0	0,75	0	0	0	-0,75
+2,25	0	-0,75	-0,75	-0,75	0
+	
+
+Mimimal Branch Length + Error
+------
+1.5 		0.75
+
 Between		And		Length
 -------		---		------
 ModD4		ModD4VatS41		61.75
 VatS41		ModD4VatS41		44.25
 Giunta		GiuntaModD4VatS41		4.5
 ModD4VatS41		GiuntaModD4VatS41		12
-Pet-1505		Pet-1505Pet-1515		0
-Pet-1515		Pet-1505Pet-1515		2
-GiuntaModD4VatS41		GiuntaModD4VatS41Pet-1519		1.5
-Pet-1519		GiuntaModD4VatS41Pet-1519		5
-GiuntaModD4VatS41Pet-1519		Pet-1505Pet-1515		0
+Pet1505		Pet1505Pet1515		0
+Pet1515		Pet1505Pet1515		2
+GiuntaModD4VatS41		GiuntaModD4VatS41Pet1519		1.5
+Pet1519		GiuntaModD4VatS41Pet1519		5
+GiuntaModD4VatS41Pet1519		Pet1505Pet1515		0

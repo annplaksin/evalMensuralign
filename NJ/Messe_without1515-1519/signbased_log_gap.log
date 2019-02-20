@@ -1,0 +1,38 @@
+Giunta
+ModD4
+Pet1505
+VatS41
+
+Start Matrix
+------
+0	161	47	153	
+161	0	134	197	
+47	134	0	118	
+153	197	118	0	
+
+Tree Matrix
+------
+0	163	47	151	
+163	0	132	197	
+47	132	0	120	
+151	197	120	0	
+
+Deviation
+---------
+0	-2	0	2
+-2	0	2	0
+0	2	0	-2
+2	0	-2	0
+
+
+Mimimal Branch Length + Error
+------
+8 		4
+
+Between		And		Length
+-------		---		------
+Giunta		GiuntaPet1505		39
+Pet1505		GiuntaPet1505		8
+ModD4		ModD4VatS41		104.5
+VatS41		ModD4VatS41		92.5
+GiuntaPet1505		ModD4VatS41		19.5

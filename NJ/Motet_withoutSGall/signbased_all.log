@@ -1,22 +1,38 @@
-1503-1
-1508-3
-Panc27_bef
-Panc27_aft
-VatS41_TuSolus
+1503.1
+1508.3
+FlorPanc27_aft
+VatS41-13a
 
-Matrix------
-0	777	523	523	550	
-777	0	453	449	484	
-523	453	0	1	111	
-523	449	1	0	107	
-550	484	111	107	0	
+Start Matrix
+------
+0	777	523	550	
+777	0	449	484	
+523	449	0	107	
+550	484	107	0	
+
+Tree Matrix
+------
+0	777	521	552	
+777	0	451	482	
+521	451	0	107	
+552	482	107	0	
+
+Deviation
+---------
+0	0	2	-2
+0	0	-2	2
+2	-2	0	0
+-2	2	0	0
+
+
+Mimimal Branch Length + Error
+------
+38 		19
 
 Between		And		Length
 -------		---		------
-1503-1		1503-11508-3		423.5
-1508-3		1503-11508-3		353.5
-Panc27_bef		Panc27_befPanc27_aft		2
-Panc27_aft		Panc27_befPanc27_aft		-1
-1503-11508-3		1503-11508-3VatS41_TuSolus		59
-VatS41_TuSolus		1503-11508-3VatS41_TuSolus		69.5
-1503-11508-3VatS41_TuSolus		Panc27_befPanc27_aft		39
+1503.1		1503.11508.3		423.5
+1508.3		1503.11508.3		353.5
+FlorPanc27_aft		FlorPanc27_aftVatS41-13a		38
+VatS41-13a		FlorPanc27_aftVatS41-13a		69
+1503.11508.3		FlorPanc27_aftVatS41-13a		59.5
