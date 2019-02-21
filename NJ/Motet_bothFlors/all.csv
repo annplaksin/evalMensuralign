@@ -1,0 +1,15 @@
+;1503.1;FlorPanc27_before;FlorPanc27_after;VatS41-13a
+1503.1;0;523;523;550
+FlorPanc27_before;523;0;1;111
+FlorPanc27_after;523;1;0;107
+VatS41-13a;550;111;107;0
+;;;;
+1503.1;0;524;522;550
+FlorPanc27_before;524;0;1;110
+FlorPanc27_after;522;1;0;108
+VatS41-13a;550;110;108;0
+;;;;
+1503.1;0;-1;1;0
+FlorPanc27_before;-1;0;0;1
+FlorPanc27_after;1;0;0;-1
+VatS41-13a;0;1;-1;0

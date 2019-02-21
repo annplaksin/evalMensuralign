@@ -1,0 +1,38 @@
+1503.1
+FlorPanc27_before
+FlorPanc27_after
+VatS41-13a
+
+Start Matrix
+------
+0	523	523	550	
+523	0	1	111	
+523	1	0	107	
+550	111	107	0	
+
+Tree Matrix
+------
+0	524	522	550	
+524	0	1	110	
+522	1	0	108	
+550	110	108	0	
+
+Deviation
+---------
+0	-1	1	0
+-1	0	0	1
+1	0	0	-1
+0	1	-1	0
+
+
+Mimimal Branch Length + Error
+------
+0.5 		0.25
+
+Between		And		Length
+-------		---		------
+1503.1		1503.1VatS41-13a		482
+VatS41-13a		1503.1VatS41-13a		68
+FlorPanc27_before		FlorPanc27_beforeFlorPanc27_after		1.5
+FlorPanc27_after		FlorPanc27_beforeFlorPanc27_after		-0.5
+1503.1VatS41-13a		FlorPanc27_beforeFlorPanc27_after		40.5

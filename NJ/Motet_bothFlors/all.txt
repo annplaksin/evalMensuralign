@@ -1,0 +1,1 @@
+(1503.1:482,VatS41-13a:68,(FlorPanc27_before:1.5,FlorPanc27_after:-0.5):40.5);
