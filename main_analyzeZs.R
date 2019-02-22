@@ -206,13 +206,11 @@ fancy.plot <- ggplot(meltedZ, aes(Group, Z, color = factor(Set))) + geom_boxplot
 fancy.plot
 
 interestingZs <- meltedZ[meltedZ$Set == "Signbased.vis.gap"|meltedZ$Set == "Signbased.log.gap"|
-                           meltedZ$Set == "Signbased.log"| meltedZ$Set == "Superlogical"|
-                           meltedZ$Set == "Superlogical.gap"|
-                           meltedZ$Set == "Signbased.all"| meltedZ$Set == "withoutSB.all"|
+                           meltedZ$Set == "Superlogical"| meltedZ$Set == "Superlogical.gap"|
                            meltedZ$Set == "withoutSB.log"|meltedZ$Set == "withoutSB.log.gap"|
                            meltedZ$Set == "withoutSB.vis.gap", ]
-interestingPlot <- ggplot(interestingZs, aes(Group, Z, color = factor(Set))) + geom_boxplot()
-interestingPlot + scale_color_brewer(palette = "RdGy") + theme_bw()
+interestingPlot <- ggplot(interestingZs, aes(Group, Z, color = factor(Set))) + geom_boxplot() + labs(color = "Parameter sets")
+interestingPlot + theme_bw() + scale_color_brewer(palette = "Paired")
 ggsave("mainOutput\\highlightZplots.eps", width = 20, height = 15, units = "cm")
 ggsave("mainOutput\\highlightZplots.pdf", width = 20, height = 15, units = "cm")
 
@@ -221,6 +219,6 @@ interestingZs$numGroup <- as.numeric(interestingZs$Group)
 mdnLinePlot <- ggplot(interestingZs, aes(numGroup, Z, color = factor(Set))) + geom_point(size=2) +
   stat_summary(aes(y = Z), fun.y=median, geom="smooth", size = 1) +
   labs(x = "Groups (numeric)", y = "Z-Value", title = "Z-Values per Group", subtitle = "With Median lines", color = "Parameter sets")
-mdnLinePlot + theme_bw() + scale_color_brewer(palette = "RdGy")
+mdnLinePlot + theme_bw() + scale_color_brewer(palette = "Paired")
 ggsave("mainOutput\\trendlinePlot.eps", width = 20, height = 15, units = "cm")
 ggsave("mainOutput\\trendlinePlot.pdf", width = 20, height = 15, units = "cm")

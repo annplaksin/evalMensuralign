@@ -5,7 +5,7 @@
 	Jonckheere-Terpstra test
 
 data:  
-JT = 350, p-value = 7.318e-15
+JT = 353, p-value = 1.007e-14
 alternative hypothesis: two.sided
 
 > jonckheere.test(signLog$Z, as.numeric(signLog$Group))
@@ -13,7 +13,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 297, p-value < 2.2e-16
+JT = 269, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(signLogGap$Z, as.numeric(signLogGap$Group))
@@ -21,7 +21,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 240, p-value < 2.2e-16
+JT = 196, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(signVisGap$Z, as.numeric(signVisGap$Group))
@@ -29,7 +29,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 310, p-value < 2.2e-16
+JT = 199, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(super$Z, as.numeric(super$Group))
@@ -37,7 +37,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 326, p-value = 5.172e-16
+JT = 277, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(superGap$Z, as.numeric(superGap$Group))
@@ -45,7 +45,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 288, p-value < 2.2e-16
+JT = 230, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutAll$Z, as.numeric(withoutAll$Group))
@@ -53,7 +53,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 316, p-value < 2.2e-16
+JT = 295, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutLog$Z, as.numeric(withoutLog$Group))
@@ -61,7 +61,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 302, p-value < 2.2e-16
+JT = 272, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutLogGap$Z, as.numeric(withoutLogGap$Group))
@@ -69,7 +69,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 243, p-value < 2.2e-16
+JT = 199, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutVisGap$Z, as.numeric(withoutVisGap$Group))
@@ -77,7 +77,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 319, p-value = 2.306e-16
+JT = 216, p-value < 2.2e-16
 alternative hypothesis: two.sided
 
 #------------------------------------------------------------------------
@@ -88,7 +88,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1750, p-value = 7.994e-15
+JT = 1747, p-value = 1.066e-14
 alternative hypothesis: two.sided
 
 > jonckheere.test(signLog$Z, as.numeric(signLog$Group))
@@ -96,7 +96,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1803, p-value = 6.661e-16
+JT = 1831, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(signLogGap$Z, as.numeric(signLogGap$Group))
@@ -104,7 +104,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1860, p-value = 6.661e-16
+JT = 1904, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(signVisGap$Z, as.numeric(signVisGap$Group))
@@ -112,7 +112,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1790, p-value = 6.661e-16
+JT = 1901, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(super$Z, as.numeric(super$Group))
@@ -120,7 +120,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1774, p-value = 1.11e-15
+JT = 1823, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(superGap$Z, as.numeric(superGap$Group))
@@ -128,7 +128,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1812, p-value = 6.661e-16
+JT = 1870, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutAll$Z, as.numeric(withoutAll$Group))
@@ -136,7 +136,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1784, p-value = 6.661e-16
+JT = 1805, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutLog$Z, as.numeric(withoutLog$Group))
@@ -144,7 +144,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1798, p-value = 6.661e-16
+JT = 1828, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutLogGap$Z, as.numeric(withoutLogGap$Group))
@@ -152,7 +152,7 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1857, p-value = 6.661e-16
+JT = 1901, p-value = 6.661e-16
 alternative hypothesis: two.sided
 
 > jonckheere.test(withoutVisGap$Z, as.numeric(withoutVisGap$Group))
@@ -160,5 +160,5 @@ alternative hypothesis: two.sided
 	Jonckheere-Terpstra test
 
 data:  
-JT = 1781, p-value = 8.882e-16
+JT = 1884, p-value = 6.661e-16
 alternative hypothesis: two.sided

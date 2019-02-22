@@ -1,0 +1,83 @@
+# Jonckheere with reversed Groups... 1 = State comparison / 7 = Quis dabit capiti
+
+> # Then we want to find the set with the most significant trend. The Z-Scores should increase with the expected similarity
+> # A Jonckheere-Terpstra test will help us#
+> jonckheere.test(signAll$Z, as.numeric(signAll$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1747, p-value = 1.066e-14
+alternative hypothesis: two.sided
+
+> jonckheere.test(signLog$Z, as.numeric(signLog$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1831, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(signLogGap$Z, as.numeric(signLogGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1904, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(signVisGap$Z, as.numeric(signVisGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1901, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(super$Z, as.numeric(super$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1823, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(superGap$Z, as.numeric(superGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1870, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutAll$Z, as.numeric(withoutAll$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1805, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutLog$Z, as.numeric(withoutLog$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1828, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutLogGap$Z, as.numeric(withoutLogGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1901, p-value = 6.661e-16
+alternative hypothesis: two.sided
+
+> jonckheere.test(withoutVisGap$Z, as.numeric(withoutVisGap$Group))
+
+	Jonckheere-Terpstra test
+
+data:  
+JT = 1884, p-value = 6.661e-16
+alternative hypothesis: two.sided

@@ -1,11 +1,12 @@
-Szenario;J;p
-Signbased.all;350;7,318e-15
-Signbased.log;297;>2.2e-16
-Signbased.log.gap;240;>2.2e-16
-Signbased.vis.gap;310;>2.2e-16
-Superlogical;326;5.172e-16
-Superlogical.gap;288;>2.2e-16
-withoutSB.all;316;>2.2e-16
-withoutSB.log;302;>2.2e-16
-withoutSB.log.gap;243;>2.2e-16
-withoutSB.vis.gap;319;2.306e-16
+Szenario;Basis Gegenvergleich;;Basis Zustandsvergleich;
+;J;p;J;p
+Signbased.all;353;1,007E-14;1747;1,066E-14
+Signbased.log;269;< 2.2e-16;1831;6,661E-16
+Signbased.log.gap;196;< 2.2e-16;1904;6,661E-16
+Signbased.vis.gap;199;< 2.2e-16;1901;6,661E-16
+Superlogical;277;< 2.2e-16;1823;6,661E-16
+Superlogical.gap;230;< 2.2e-16;1870;6,661E-16
+withoutSB.all;295;< 2.2e-16;1805;6,661E-16
+withoutSB.log;272;< 2.2e-16;1828;6,661E-16
+withoutSB.log.gap;199;< 2.2e-16;1901;6,661E-16
+withoutSB.vis.gap;216;< 2.2e-16;1884;6,661E-16
