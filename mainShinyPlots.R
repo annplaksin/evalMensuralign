@@ -9,7 +9,28 @@ everything$group <- factor(everything$group, levels=c(1:7), labels=c(1:7))
 
 sets <- levels(everything$set)
 
-# 2. Plot comparison sets without gap vs. gap sets
+# 2. Plot comparison orig vs. random
+intersting <- everything[everything$set == "Signbased.log.gap"|
+                         everything$set == "Signbased.vis.gap"|
+                         everything$set == "Superlogical.gap", ]
+interesting.plot <- ggplot(intersting[intersting$source == "randomized", ], aes(x = group, y = reldist, color=factor(set))) + 
+  geom_boxplot(outlier.shape = 1) +
+  stat_summary(data = intersting[intersting$source == "original", ], shape=18, size=1, na.rm = TRUE) +
+  labs(x = "Group",y = "Relative Distance", color = "Scenario")
+interesting.plot + theme_bw() + scale_color_brewer(palette = "Set1")
+ggsave("mainOutput\\compareInterestingDists.png", width = 20, height = 15, units = "cm")
+
+visVsSup <- everything[everything$set == "Signbased.vis.gap"|
+                   everything$set == "Superlogical.gap", ]
+visVsSup.plot <- ggplot(visVsSup[visVsSup$source == "randomized", ], aes(x = group, y = reldist)) + 
+  geom_boxplot(outlier.shape = 1) +
+  stat_summary(data = visVsSup[visVsSup$source == "original", ], shape=18, size=1, na.rm = TRUE) +
+  labs(x = "Group",y = "Relative Distance", color = "Scenario") +
+  facet_wrap(~ factor(set), nrow = 1)
+visVsSup.plot + theme_bw() #+ scale_color_brewer(palette = "Set1")
+ggsave("mainOutput\\compareVisVsSuperDists.png", width = 20, height = 15, units = "cm")
+
+# 3. Plot comparison sets without gap vs. gap sets
 
 #all
 all <- everything[everything$set == "Signbased.all"|everything$set == "Signbased.all.gap"|
