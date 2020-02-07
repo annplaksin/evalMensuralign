@@ -22,12 +22,13 @@ colnames(meltedZ)[4] <- "Z"
 # Get interesting parameter sets for plotting
 interestingZs <- meltedZ[meltedZ$Set == "Signbased.vis.gap"|
                            meltedZ$Set == "Signbased.log.gap"|
+                           meltedZ$Set == "Signbased.all.gap"|
                            meltedZ$Set == "Superlogical.gap", ]
 
 interestingZs$numGroup <- as.numeric(interestingZs$Group)
 
 mdnLinePlot <- ggplot(interestingZs, aes(numGroup, Z, color = factor(Set))) + geom_point(size=2) +
   stat_summary(aes(y = Z), fun.y=median, geom="smooth", size = 1) +
-  labs(x = "Groups (numeric)", y = "Z-Value", title = "Z-Values per Group", subtitle = "With Median lines", color = "Parameter sets")
-mdnLinePlot + theme_bw() + scale_color_brewer(palette = "Set1")
-ggsave("mainOutput\\trendlinePlot-3.png", width = 20, height = 15, units = "cm")
+  labs(x = "Groups (numeric)", y = expression(paste(sigma)), title = expression(paste(sigma," per Group with Median lines")), subtitle = "With Median lines", color = "Parameter sets")
+mdnLinePlot + theme_bw() + scale_color_brewer(palette = "Spectral")
+ggsave("mainOutput\\trendlinePlot-4.png", width = 20, height = 15, units = "cm")
