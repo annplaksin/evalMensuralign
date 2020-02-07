@@ -29,6 +29,6 @@ interestingZs$numGroup <- as.numeric(interestingZs$Group)
 
 mdnLinePlot <- ggplot(interestingZs, aes(numGroup, Z, color = factor(Set))) + geom_point(size=2) +
   stat_summary(aes(y = Z), fun.y=median, geom="smooth", size = 1) +
-  labs(x = "Groups (numeric)", y = expression(paste(sigma)), title = expression(paste(sigma," per Group with Median lines")), subtitle = "With Median lines", color = "Parameter sets")
+  labs(x = "Groups (numeric)", y = "Z-Value", title = "Z-Values per Group with Median lines", subtitle = "With Median lines", color = "Parameter sets")
 mdnLinePlot + theme_bw() + scale_color_brewer(palette = "Spectral")
 ggsave("mainOutput\\trendlinePlot-4.png", width = 20, height = 15, units = "cm")
