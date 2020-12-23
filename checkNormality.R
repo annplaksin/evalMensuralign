@@ -24,10 +24,10 @@ for (si in 1:4)
     # Set i according to number of examples
     for(i in 1:5)
     {
-      # Looping trhough parameters
+      # Looping through parameters
       for(p in 1:8)
       {
-        # Set filenames
+        # Set file names
         input <- paste("normalityInput\\", size[si], "\\", set[se], "\\", i, "_", parameters[p], ".csv", sep = "")
         
         outQQ_relDist <- paste("normalityOutput\\reldist\\", size[si], "_", set[se], "_", i, "_", parameters[p], "-QQ.pdf", sep = "")

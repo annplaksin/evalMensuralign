@@ -19,7 +19,7 @@ sets <- c("Signbased.all", "Signbased.all.gap", "Signbased.log", "Signbased.log.
 for (c in 1:70) {
   # Loop through sets
   for (s in 1:14) {
-    # Generate filename
+    # Generate file name
     input <- paste("mainInput\\",cases[c],"_",sets[s],".csv", sep="")
     
     # Open file
@@ -65,7 +65,7 @@ zResults <- data.frame(Group=groups,Case=res.Case,Set=res.Set,Z=res.Z)
 
 normResults <- data.frame(Group=groups,Case=res.Case,Set=res.Set,Norm.p=res.Norm)
 
-# Reshape data to wode format
+# Reshape data to wide format
 zResults_wide <- cast(zResults, Group + Case ~ Set, value="Z")
 
 normResults_wide <- cast(normResults, Group + Case ~ Set, value="Norm.p")

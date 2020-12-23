@@ -5,7 +5,7 @@ library(gmodels) # CrossTable()
 # library(lsr) (other package with Cramers V)
 library(rcompanion)
 
-results <- read.csv2("C:/Users/Rumpel/Source/Repos/R/evalMensuralign/normalityOutput/results.csv")
+results <- read.csv2("/normalityOutput/results.csv")
 
 # Throw out superlogical sets of withoutSB, because they're not a used parameter set
 results <- results[!(results$set == "withoutSB" & (results$params == "Superlogical" | results$params == "Superlogical.gap")), ]

@@ -107,7 +107,7 @@ withoutLog.rankmeans; withoutLogGap.rankmeans;
 withoutVisGap.rankmeans
 
 # Also, we want to know where a difference lies... therefore we perform a fancy post-hoc analysis with kruskalmc()
-# The Group containing the compares to Quis dabit capiti serves as control group in a two-tailed test with only 6 comparisons 
+# The Group containing the compares of edited voices serves as control group in a two-tailed test with only 6 comparisons 
 # (a little fishing for effects must be allowed in that case, because we ordered the groups according a certain expectation)
 # But we still want a good alpha
 
