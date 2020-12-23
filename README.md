@@ -2,8 +2,8 @@
 All the data needed for the evaluation of alignments of Mensural music.
 This repo contains all the results and scripts for the surrogate data analysis performed in:
 Plaksin, Anna Viktoria Katrin: "Modelle zur computergestützten Analyse von Überlieferungen 
-der Mensuralmusik.Emprische Textforschung im Kontext phylogenetischer Verfahren.", Münster, 2021 
-(Schriften zur Musikwissenschaft aus Münster 27), online unter: [urn:nbn:de:hbz:6-59029717067](http://nbn-resolving.de/urn:nbn:de:hbz:6-59029717067).
+der Mensuralmusik. Emprische Textforschung im Kontext phylogenetischer Verfahren.", Münster, 2021 
+(Schriften zur Musikwissenschaft aus Münster 27), online: [urn:nbn:de:hbz:6-59029717067](http://nbn-resolving.de/urn:nbn:de:hbz:6-59029717067).
 
 To analyses has been performed:
 1. Test of normality of surrogate alignment distances: raw data in `normalityInput`. 
